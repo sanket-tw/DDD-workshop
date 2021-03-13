@@ -29,4 +29,8 @@ public class Item {
   public int getQuantity() {
     return quantity;
   }
+
+  public double cost() {
+    return product.getPrice().getValue() * quantity + product.getWeight().getValue() * 0.1;
+  }
 }

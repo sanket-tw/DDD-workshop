@@ -73,3 +73,14 @@ When Customer’s Address is updated, update her all Bank Accounts address as we
 -- Customer entity Domain has Address Value Object
 
 -- Bank Account entity has Customer
+
+
+Use case 11 - Calculate Total amount for the Order.  put shipping cost as per weight
+Total cost = cost of all products in order + (weightIngrams of product *.01)
+
+
+
+
+approach:
+- have total amount calculation inside order
+-

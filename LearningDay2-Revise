@@ -1,49 +1,16 @@
-Talked about Model and about 3-tier architecture
-Easier to talk to business stakeholders in terms of domain (ubiquitous language)
+1.Covered domain service,
+2. Factory
+3. Aggregate
 
-DDD - have domain layers
-    - Domain is first class citizen
+aggregate- define a clear boundary and ownership,
+it is a group of objects
+entity becomes a aggregate,
+root is always an entity
+agrregate root entity Id becomes global identifier, and other ids of other objects inside aggregate become local identifier
 
--. Software complexity  =  business complexity + tech complexity
+on a rough guideline, every aggregate identifies as a microservice
 
-- kind of reduces business complexity, by thinking about domain first...
--
+good practice: don't tie up entities directly, make it flat
 
-1. Model is at heart of software system.
-2. Domain model should be such that it all business functionalities are independent of 3-tier architecture. (Hexagonal Architecture)
-3. model closer to actual domain accepts enhancements easily.
-4. Domain is primary and tech stack (framework) is secondary
-5. Business logic should not leak to service layer, should be part of domain
-
-Hexagonal Architecture
-1. We interact with domain using adapters/ ports.
-2.
-
-Tactical Pattern
-
-1. Domain
-2. Entity
-3. Value Object
-
-Domain Events
-1. Immutable
-2. Event happened in past
-3. we can replay them
-4. Domain can only invoke domain events
-5. we can build current state using domain events
-6. Domain events are fired only after execution of event
-
-Entity v/s Value Object
-1. Entity will have an identity, VO do not
-2. Entity will have state changes (lifecycle), VO are dependent on Entity
-3. Entity will send out domain events, and only that particular entity is responsible for its domain events.
-4. Differences based on we approach,
- if we want to track VO, we can convert to DO
-
-
-Domain events not required for DDD
-
-
-
-
+convert one aggregate to multiple aggregate, so make it from transactional ACID to eventual consistency
 

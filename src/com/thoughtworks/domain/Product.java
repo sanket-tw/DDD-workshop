@@ -5,6 +5,8 @@ public class Product {
 
   private Price price;
 
+  private Weight weight;
+
   public Product(String name) {
     this.name = name;
   }
@@ -20,11 +22,21 @@ public class Product {
     this.price = price;
   }
 
+  public Product(String name, Price price, Weight weight) {
+    this.name = name;
+    this.price = price;
+    this.weight = weight;
+  }
+
   public Price getPrice() {
     return price;
   }
 
   public void setPriceBelowCompetitor(Price competitorPrice) {
     this.price = new Price(competitorPrice.getValue() * 0.9);
+  }
+
+  public Weight getWeight() {
+    return weight;
   }
 }

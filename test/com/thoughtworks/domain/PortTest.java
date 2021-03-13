@@ -145,9 +145,24 @@ public class PortTest {
     customer.addBankAccount();
     customer.addBankAccount();
 
+    //start logical transaction
     customer.updateAddress(newAdress);
+    //end logical transaction
 
     assertEquals(newAdress, customer.getBankAccountList().get(0).getCustomerAddress());
     assertEquals(newAdress, customer.getBankAccountList().get(1).getCustomerAddress());
+  }
+
+  @Test
+  void shouldCalculateTotalCostOfOrder() {
+    Cart cartOne = new Cart();
+    Product gmCricketBat = new Product("GM Cricket bat", new Price(2), new Weight(10.0));
+    Item gmCricketBatItem = new Item(gmCricketBat, 1);
+    cartOne.add(gmCricketBatItem);
+
+    Order order = OrderManagerService.checkoutCart(cartOne);
+
+    assertEquals(2 * 1 + 10.0 * 0.1, order.calculateTotalCost());
+
   }
 }
