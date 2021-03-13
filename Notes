@@ -1,0 +1,67 @@
+Use case 1 -
+
+Add a “IPad Pro” to a Cart
+Note: Please do not model/use User class
+
+Use case 2 -
+
+Add a “Hero ink Pen” to a Cart
+
+Use case -3
+
+Add 2 qty of  “ GM Cricket bat” to Cart.
+
+Item
+
+Use case - 4
+
+Remove already added Item “IPad Pro”( with quantities)  from cart.
+
+Use case -5
+
+As a business User I would like to know which Product/Item was deleted from Cart.
+
+-
+
+
+Use case - 6
+
+As a business User, I would like to differentiate Carts.
+*  Two carts where items are same, equality on Carts should return false
+
+Cart cart1 = Cart()
+
+Cart cart2 = Cart()
+
+Item item1 = new ( Item(Product("Ipad"), 1)
+
+Item item2 = new ( Item(Product("Ipad"), 1)
+
+cart1.add(item1)
+
+cart2.add(item2)
+
+cart1.equals(cart2)  should be false
+
+---
+
+Use case -7
+
+See the Price of Product before adding to a Cart -> Add Product with price to Cart
+
+
+java.util.Currency
+
+
+--- Day-2-----
+
+
+Use case 8 -  As a Business User I will like price my product 10% below competitor price (competitor price is available for product) .
+Assume that HashMap of Competitor Product Name and price is available
+
+
+Use case 9 - Create Order( with Products) when Cart is checked out
+Also Mark cart as checkedout
+
+
+-
