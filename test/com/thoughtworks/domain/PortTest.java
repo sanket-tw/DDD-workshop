@@ -2,6 +2,8 @@ package com.thoughtworks.domain;
 
 import com.thoughtworks.domain.domain_service.CompetitorBasedPricer;
 import com.thoughtworks.domain.domain_service.OrderManagerService;
+import com.thoughtworks.domain.misc.Address;
+import com.thoughtworks.domain.misc.Customer;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -132,5 +134,20 @@ public class PortTest {
     Order order = OrderManagerService.checkoutCart(cartOne);
     //should order have products? or have cart...: ans : should add products to add .or item
     assertEquals(gmCricketBatItem, order.getItems().get(0));
+  }
+
+  @Test
+  void shouldUpdateBankAccountAddressWhenCustomerUpdatesAddress() {
+    Address oldAdress = new Address("some address");
+    Address newAdress = new Address("new address");
+
+    Customer customer = new Customer(oldAdress);
+    customer.addBankAccount();
+    customer.addBankAccount();
+
+    customer.updateAddress(newAdress);
+
+    assertEquals(newAdress, customer.getBankAccountList().get(0).getCustomerAddress());
+    assertEquals(newAdress, customer.getBankAccountList().get(1).getCustomerAddress());
   }
 }

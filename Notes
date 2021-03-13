@@ -64,4 +64,12 @@ Use case 9 - Create Order( with Products) when Cart is checked out
 Also Mark cart as checkedout
 
 
--
+MISC
+
+Use case 10 - Customer and Bank Account
+When Customer’s Address is updated, update her all Bank Accounts address as well. (example of invariant or business rules or consistency rules)
+
+
+-- Customer entity Domain has Address Value Object
+
+-- Bank Account entity has Customer
